@@ -34,3 +34,8 @@ Utiliza php como linguagem de back-end, mesclando orientação a objetos e lingu
 2) Baixe o esquema do banco de dados 
 3) No seu navegador escreva localhost/blog-desafio-final
 4)  Aproveite😀
+
+# Autor 
+Arthur Rafael de Souza Jesus
+<br>
+https://www.linkedin.com/in/arthur-rafael-480a4a246/
