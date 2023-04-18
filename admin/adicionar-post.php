@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $post = new Post($mysql);
             $post->adicionar($_POST['titulo'], $_POST['conteudo'], $_POST['data']);
             redireciona('/blog-desafio-final/admin/index-admin.php');
-        } catch (postIncompletoException $excecao) {
+        } catch (Exception $excecao) {
             echo "<script>alert('Você não pode publicar um post com informações faltando.')</script>";
         }
     }
