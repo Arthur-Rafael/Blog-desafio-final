@@ -18,8 +18,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Email ou Senha incorreta. Tente Novamente.')</script>";
     }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
