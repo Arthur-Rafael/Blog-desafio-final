@@ -30,7 +30,7 @@ body {
 
 .botao:hover {
     background: violet;
-    transform: scale(0.5);
+    transform: scale(2s);
 }
 
 .botao-block {

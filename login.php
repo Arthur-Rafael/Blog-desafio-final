@@ -7,7 +7,7 @@ include_once('falhaNoLoginException.php');
 include_once('src/redireciona.php');
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usuario = new Usuario($mysql);
+    $usuario             = new Usuario($mysql);
     $controladorDeSessao = new ControladorDeSessao();
 
     try {

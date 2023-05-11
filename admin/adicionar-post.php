@@ -6,20 +6,22 @@ require ('../src/classes/models/class.post.php');
 require ('../src/redireciona.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $titulo = ($_POST['titulo']); 
-    $conteudo = ($_POST['conteudo']);
+    $titulo     = ($_POST['titulo']); 
+    $conteudo   = ($_POST['conteudo']);
     $dataDeHoje = ($_POST['data']);
-
-    if($titulo == '' || $conteudo == '' || $dataDeHoje = '')  
-    {
-        try {
+    
+    try {
+        if($titulo == '' || $conteudo == '' || $dataDeHoje == '')  
+        {
+            throw new postIncompletoException; 
+        }
             $post = new Post($mysql);
             $post->adicionar($_POST['titulo'], $_POST['conteudo'], $_POST['data']);
             redireciona('/blog-desafio-final/admin/index-admin.php');
-        } catch (Exception $excecao) {
-            echo "<script>alert('Você não pode publicar um post com informações faltando.')</script>";
-        }
+    } catch (postIncompletoException $excecao) {
+        echo $excecao->getMessage();
     }
+    
 }
 
 ?>

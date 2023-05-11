@@ -7,6 +7,5 @@ class postIncompletoException extends \DomainException
         $mensagem = "Você não pode publicar um post com informações faltando.";
         parent::__construct($mensagem);
     }
-
 }
 ?>
