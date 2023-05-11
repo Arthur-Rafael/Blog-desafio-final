@@ -10,18 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conteudo = ($_POST['conteudo']);
     $dataDeHoje = ($_POST['data']);
 
-    if($titulo == '' || $conteudo == '' || $dataDeHoje = '')  
-    {
-        try {
+    try {
+        if($titulo == '' || $conteudo == '' || $dataDeHoje = '')  
+        {
+            throw new postIncompletoException;
+        }
             $post = new Post($mysql);
-            $post->adicionar($_POST['titulo'], $_POST['conteudo'], $_POST['data']);
-            redireciona('/blog-desafio-final/admin/index-admin.php');
-        } catch (postIncompletoException $excecao) {
-            echo "<script>alert('Você não pode publicar um post com informações faltando.')</script>";
+                $post->adicionar($_POST['titulo'], $_POST['conteudo'], $_POST['data']);
+                redireciona('/blog-desafio-final/admin/index-admin.php');
+            } catch (postIncompletoException $excecao) {
+                echo "<script>alert('Você não pode publicar um post com informações faltando.')</script>";
         }
     }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
